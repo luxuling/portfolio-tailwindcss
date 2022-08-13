@@ -23,8 +23,8 @@ window.onscroll = ()=>{
     upBtn.classList.add("flex")
   }else{
     header.classList.remove("navMenu-active")
-    upBtn.classList.add("hidden")
     upBtn.classList.remove("flex")
+    upBtn.classList.add("hidden")
   }
 }
 
