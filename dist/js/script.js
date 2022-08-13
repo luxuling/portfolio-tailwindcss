@@ -16,10 +16,15 @@ window.addEventListener("click", function(e){
 window.onscroll = ()=>{
   const header = document.querySelector("header")
   const navMenu = header.offsetTop
+  const upBtn = document.getElementById("upBtn")
   if(window.pageYOffset > navMenu){
     header.classList.add("navMenu-active")
+    upBtn.classList.remove("hidden")
+    upBtn.classList.add("flex")
   }else{
     header.classList.remove("navMenu-active")
+    upBtn.classList.add("hidden")
+    upBtn.classList.remove("flex")
   }
 }
 
