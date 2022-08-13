@@ -5,6 +5,13 @@ hamburger.addEventListener("click", function(){
   navItem.classList.toggle("hidden")
 })
 
+window.addEventListener("click", function(e){
+  if(e.target != hamburger && e.target != navItem){
+    hamburger.classList.remove("hamburger-active")
+    navItem.classList.add("hidden")
+  }
+})
+
 
 window.onscroll = ()=>{
   const header = document.querySelector("header")
@@ -14,4 +21,22 @@ window.onscroll = ()=>{
   }else{
     header.classList.remove("navMenu-active")
   }
+}
+
+const checkbox = document.getElementById("checkbox")
+     const html = document.querySelector("html")
+     checkbox.addEventListener("click",function(){
+        if(checkbox.checked){
+          html.classList.add("dark")
+          localStorage.theme = "dark"
+        }else{
+          html.classList.remove("dark")
+          localStorage.theme = "light"
+        }
+     })
+     
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  checkbox.checked = true
+} else {
+  checkbox.checked = false
 }
